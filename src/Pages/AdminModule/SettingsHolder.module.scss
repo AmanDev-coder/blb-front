@@ -1,0 +1,31 @@
+// 🎨 Color Palette
+$primary-color: #4a90e2;
+$secondary-color: #2c3e50;
+$background-light: #f8f9fa;
+$text-dark: #222;
+$shadow-light: rgba(0, 0, 0, 0.08);
+
+// 🛠️ Settings Container
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: $background-light;
+  // min-height: 100vh;
+}
+
+// 📌 Settings Content Area
+.settingsContent {
+  background: white;
+  border-radius: 10px;
+  // padding: 2rem; 
+  // box-shadow: 0px 4px 10px $shadow-light;
+  // min-height: 400px;
+}
+
+// 📌 Responsive Design
+@media (max-width: 768px) {
+  .settingsContainer {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,86 @@
+/**
+ * Font Fallback System
+ * Provides high-quality system font fallbacks if Google Fonts fail to load
+ */
+
+// Primary font-family fallback chain for when Poppins can't be loaded
+:root {
+  // Improved font-family fallback chains
+  --font-fallback-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  
+  --font-fallback-serif: Georgia, "Times New Roman", serif;
+  
+  --font-fallback-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", 
+                       "Courier New", monospace;
+}
+
+// Font loading state classes
+.fonts-loading {
+  // Optionally hide content while fonts load
+  // visibility: hidden;
+}
+
+.fonts-loaded {
+  // Fonts loaded successfully, ensure they are applied
+  visibility: visible;
+  
+  html, body, #root, #root * {
+    font-family: var(--font-family-primary);
+  }
+  
+  .secondary-font,
+  .font-secondary {
+    font-family: var(--font-family-secondary);
+  }
+}
+
+// This will only be used if the Poppins font fails to load
+.fonts-failed, .fonts-timeout {
+  // Update all font variables to use fallbacks
+  --font-family-primary: var(--font-fallback-sans) !important;
+  --font-family-heading: var(--font-fallback-sans) !important;
+  --font-family-secondary: var(--font-fallback-sans) !important;
+  --font-family-mono: var(--font-fallback-mono) !important;
+  
+  // Make sure content is visible
+  visibility: visible;
+  
+  // Adjust specific elements that might need tweaking with system fonts
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.025em; // Tighten heading spacing slightly for system fonts
+  }
+  
+  // System fonts may need slightly different line heights
+  p, li, blockquote {
+    line-height: 1.6;
+  }
+  
+  // Adjust button text for system fonts
+  button, 
+  .btn {
+    font-weight: 600; // Make buttons slightly bolder with system fonts
+  }
+}
+
+// Specific adjustments for different operating systems
+@supports (-webkit-appearance:none) {
+  .fonts-failed, .fonts-timeout {
+    // macOS/iOS-specific adjustments
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+}
+
+@supports (-moz-appearance:none) {
+  .fonts-failed, .fonts-timeout {
+    // Firefox-specific adjustments
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .fonts-failed, .fonts-timeout {
+    // IE-specific adjustments
+    font-feature-settings: normal;
+  }
+} 

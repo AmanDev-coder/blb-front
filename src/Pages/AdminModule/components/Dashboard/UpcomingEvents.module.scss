@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+.eventsSection {
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+}
+
+.eventContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.eventCard {
+  background: #f9fafc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.icon {
+  font-size: 2rem;
+  color: #0077ff;
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #0077ff;
+  font-weight: bold;
+}
+
+.discount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  color: #ff3b3b;
+  font-weight: bold;
+}
+
+.timerIcon {
+  color: #0077ff;
+}
+
+.discountIcon {
+  color: #ff3b3b;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .eventCard {
+    width: 100%;
+    max-width: 100%;
+  }
+}

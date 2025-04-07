@@ -1,0 +1,666 @@
+  // Variables
+  $primary-color: #007bff;
+  $success-color: #28a745;
+  $warning-color: #ffc107;
+  $error-color: #dc3545;
+  $background-light: #f8f9fa;
+  $text-color: #333;
+  $border-color: #ddd;
+
+  // Mixins
+  @mixin transition($property: all, $duration: 0.3s) {
+    transition: $property $duration ease-in-out;
+  }
+
+  // Base Container
+  .transactionsContainer {
+    background: white;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+  }
+
+  // Header & Controls
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h3 {
+      font-size: 1.5rem;
+      color: $text-color;
+      margin: 0;
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      @include transition;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  .searchBox {
+    position: relative;
+
+    input {
+      padding: 10px 35px;
+      border-radius: 8px;
+      border: 1px solid $border-color;
+      font-size: 0.9rem; // Reduced font size
+      @include transition;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+        outline: none;
+      }
+    }
+
+    .searchIcon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #777;
+    }
+  }
+
+
+  .addButton {
+    background: $primary-color;
+    color: white;
+    padding: 8px 16px; // Slimmer height & width adjustment
+    font-size: 0.85rem; // Slightly smaller text
+    font-weight: 500;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; // Space between icon and text
+    height: 38px; // Perfectly adjusted height
+    min-width: 120px; // Ensures a consistent sleek look
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+
+    &:hover {
+      background: rgba($primary-color, 0.1);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+
+  .filterButton {
+    background: rgba($warning-color, 0.1);
+    color: $warning-color;
+
+    &:hover {
+      background: rgba($warning-color, 0.2);
+    }
+  }
+
+  .sortButton {
+    background: rgba($success-color, 0.1);
+    color: $success-color;
+
+    &:hover {
+      background: rgba($success-color, 0.2);
+    }
+  }
+
+  // Table
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem; // Optimized for better fit
+
+    thead {
+      background: $primary-color;
+      color: white;
+
+      th {
+        padding: 10px; // Reduced padding for better fit
+        text-align: left;
+        font-weight: 600;
+        white-space: nowrap; // Prevents column text from breaking
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $border-color;
+        @include transition;
+
+        &:hover {
+          background: $background-light;
+        }
+
+        td {
+          padding: 6px; // Further reduced padding to prevent wrapping
+          text-align: left;
+          white-space: nowrap; // Ensures no line breaks
+        }
+      }
+    }
+  }
+
+  // Avatar
+  .avatar {
+    width: 36px; // Slightly reduced size
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  // Editable Inputs
+  input, select, .inputt {
+    width: 100%;
+    padding: 5px; // Reduced padding for better inline fit
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  // Status Colors
+  .statusCell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px; // Reduced padding
+    border-radius: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &.completed {
+      background: rgba($success-color, 0.1);
+      color: $success-color;
+    }
+
+    &.pending {
+      background: rgba($warning-color, 0.1);
+      color: $warning-color;
+    }
+
+    &.failed {
+      background: rgba($error-color, 0.1);
+      color: $error-color;
+    }
+  }
+
+  // Actions - Edit, Save, Delete
+  .actions {
+    display: flex;
+    gap: 5px; // Reduced gap for better fit
+  }
+
+  // Icon Buttons
+  .editButton, .saveButton, .deleteButton, .viewProfileButton {
+    background: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+    padding: 5px; // Reduced padding for better inline fit
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .deleteButton {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
+
+  .viewProfileButton {
+    background: rgba(40, 167, 69, 0.1); // Green for profile
+    color: #28a745;
+  }
+
+  // Hover Effects
+  .editButton:hover, .saveButton:hover, .deleteButton:hover, .viewProfileButton:hover {
+    opacity: 0.8;
+  }
+
+
+  // Pagination
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    .pageNumbers {
+      display: flex;
+      gap: 8px;
+
+      button {
+        padding: 8px 12px;
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        background: white;
+        color: $text-color;
+        cursor: pointer;
+        @include transition;
+
+        &:hover {
+          background: $background-light;
+        }
+
+        &.active {
+          background: $primary-color;
+          color: white;
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+  // Add these new styles to your SCSS file
+
+  // Contact Number Fix
+  .contactCell, .emailCell, .nameCell, .locationCell, .yachtsCell, .revenueCell, .statusCell {
+      // white-space: nowrap;
+      font-size: 0.85rem;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    .contactCell{
+      white-space: nowrap;
+    }
+    // Dropdown Styles
+    .dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba($primary-color, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      
+      select {
+        border: none;
+        background: transparent;
+        font-size: 0.9rem;
+        color: $text-color;
+        appearance: none;
+        padding-right: 20px;
+      }
+    }
+    
+    // View Switcher
+    .viewSwitcher {
+      display: flex;
+      gap: 4px;
+      background: rgba($primary-color, 0.1);
+      border-radius: 6px;
+      padding: 4px;
+      
+      button {
+        padding: 6px 10px;
+        border: none;
+        background: none;
+        color: $text-color;
+        cursor: pointer;
+        
+        &.active {
+          background: white;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+      }
+    }
+    
+    // Entries Selector
+    .entriesSelector {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      
+      select {
+        padding: 4px 8px;
+        border-radius: 4px;
+        border: 1px solid $border-color;
+      }
+    }
+    
+    // Enhanced Pagination
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    
+      .pageNumbers {
+        display: flex;
+        gap: 4px;
+        
+        button {
+          min-width: 32px;
+          padding: 6px 8px;
+          border: 1px solid $border-color;
+          border-radius: 4px;
+          background: white;
+          
+          &:hover:not(:disabled) {
+            background: $background-light;
+          }
+          
+          &.active {
+            background: $primary-color;
+            color: white;
+            border-color: $primary-color;
+          }
+          
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+
+    /* 🎨 Filter and Export Section Styles */
+    .filterContainer {
+      position: relative;
+      display: inline-block;
+    }
+
+  .filterButton {
+    background: #007bff;
+    color: white;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .filterDropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    width: 250px;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+  }
+
+  .filterContainer.active .filterDropdown {
+    display: block;
+  }
+
+  .filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
+    align-items: start;
+    // padding: 8px 0;
+  }
+
+  .filterGroup select,
+  .filterGroup input[type="range"] {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .filterGroup label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  /* 📂 Export Buttons */
+  .exportButtons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .exportButtons button {
+    background: #007bff;
+    color: white;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .exportButtons button:hover {
+    background: #0056b3;
+  }
+  .sortContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sortButton {
+    background: #007bff;
+    color: white;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .sortDropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+    top: 40px;
+    left: 0;
+    z-index: 10;
+  }
+  
+  .sortContainer.active .sortDropdown {
+    display: block;
+  }
+  
+  .sortDropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sortDropdown li {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .sortDropdown li:hover {
+    background: #f0f0f0;
+  }
+  
+  // Clickable Cells
+  .clickableCell {
+    cursor: pointer;
+    color: $primary-color;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #025bba;
+    }
+  }
+
+  // Modal Overlay
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+  }
+
+  .modalContent {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    h3 {
+      margin: 0;
+      padding: 1.5rem;
+      border-bottom: 1px solid $border-color;
+      font-size: 1.5rem;
+      color: $text-color;
+      background: #f8f9fa;
+    }
+  }
+
+  .modalBody {
+    padding: 1.5rem;
+  }
+
+  .detailRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba($border-color, 0.5);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+
+    span {
+      &:first-child {
+        font-weight: 500;
+        color: #666;
+        min-width: 140px;
+      }
+
+      &:last-child {
+        color: $text-color;
+        text-align: right;
+      }
+    }
+  }
+
+  .modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid $border-color;
+    background: #f8f9fa;
+
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  .viewMoreButton {
+    background: $primary-color;
+    color: white;
+    border: none;
+
+    &:hover {
+      background: #025bba;
+    }
+  }
+
+  .closeButton {
+    background: #f8f9fa;
+    color: $text-color;
+    border: 1px solid $border-color;
+
+    &:hover {
+      background:#a7a8a8;
+    }
+  }
+
+  .statusBadge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    &.completed {
+      background: rgba($success-color, 0.1);
+      color: $success-color;
+    }
+
+    &.pending {
+      background: rgba($warning-color, 0.1);
+      color: $warning-color;
+    }
+
+    &.failed {
+      background: rgba($error-color, 0.1);
+      color: $error-color;
+    }
+  }
+
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

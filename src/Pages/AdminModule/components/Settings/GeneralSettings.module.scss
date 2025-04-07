@@ -1,0 +1,159 @@
+$primary-color: #4a90e2;
+$secondary-color: #50e3c2;
+$accent-color: #d0021b;
+$background-color: #f4f4f6;
+$border-color: #e1e1e1;
+$text-color: #333;
+$dark-text: #34495e;
+$border-radius: 10px;
+$transition-speed: 0.3s;
+
+.generalSettings {
+  width: 100%;
+  // min-height: 100vh;
+  // background: radial-gradient(circle at top left, #e8f1f8, #f0f4f8);
+  padding: 3rem 2rem;
+  backdrop-filter: blur(8px);
+  font-family: 'Poppins', system-ui, sans-serif;
+
+  & .header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $text-color;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $border-color;
+  }
+
+  & .description {
+    font-size: 1.2rem;
+    color: $dark-text;
+    max-width: 800px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  & .settingsForm {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: $border-radius;
+    // padding: 2.5rem;
+    // box-shadow: 
+    //   0 4px 16px rgba(0, 0, 0, 0.15),
+    //   0 2px 20px rgba(168, 85, 247, 0.05);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+
+    & .formGroup {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        font-weight: 600;
+        color: $dark-text;
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      input[type="text"], input[type="email"] {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid $border-color;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        transition: all $transition-speed ease;
+        background: rgba(255, 255, 255, 0.95);
+        
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 
+            0 0 0 3px rgba($primary-color, 0.2),
+            0 4px 15px rgba($primary-color, 0.1);
+          outline: none;
+        }
+      }
+    }
+
+    & .switch {
+      position: relative;
+      display: inline-block;
+      width: 64px;
+      height: 36px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        
+        &:checked + .slider {
+          background: $secondary-color;
+
+          &::before {
+            transform: translateX(28px) rotate(360deg);
+          }
+        }
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $border-color;
+        transition: all $transition-speed;
+        border-radius: $border-radius;
+
+        &::before {
+          content: '';
+          position: absolute;
+          height: 28px;
+          width: 28px;
+          left: 4px;
+          bottom: 4px;
+          background: white;
+          border-radius: 50%;
+          transition: all $transition-speed;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    & .saveButton {
+      grid-column: 1 / -1;
+      background: $primary-color;
+      color: white;
+      padding: 1.25rem 2.5rem;
+      border: none;
+      border-radius: $border-radius;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all $transition-speed ease;
+      box-shadow: 
+        0 4px 15px rgba(99, 102, 241, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+          0 6px 20px rgba(99, 102, 241, 0.4),
+          0 0 0 2px rgba(255, 255, 255, 0.3);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@keyframes gradientRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* 🌊 Yacht Owner Page */
+.yachtOwner {
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* 📌 Header */
+.header {
+  background: linear-gradient(to right, #0077ff, #1c2833);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+}
+
+/* 📊 Quick Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 📌 Individual Stat Card */
+.statCard {
+  padding: 1rem;
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* 🎨 Stat Card Colors */
+.totalOwners {
+  background: linear-gradient(to right, #2980b9, #6dd5fa);
+}
+
+.activeOwners {
+  background: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+.inactiveOwners {
+  background: linear-gradient(to right, #e74c3c, #e67e22);
+}
+
+.topEarning {
+  background: linear-gradient(to right, #f39c12, #f1c40f);
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 1200px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,291 @@
+// 🎨 Color Palette (Refined)
+$primary-color: #4A90E2;
+$secondary-color: #2C3E50;
+$accent-color: #16A085;
+$success-color: #27ae60;
+$error-color: #e74c3c;
+$warning-color: #f39c12;
+$background-light: #f8f9fa;
+$background-dark: #ecf0f1;
+$text-dark: #222;
+$text-light: #fff;
+$border-color: #dcdcdc;
+$shadow-light: rgba(0, 0, 0, 0.08);
+$shadow-dark: rgba(0, 0, 0, 0.2);
+
+// 📌 Base Container
+.addOwnerContainer {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0px 10px 25px $shadow-dark;
+  width: 100%;
+  // max-width: 780px;
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+// 📌 Header
+.header {
+  text-align: left;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary-color;
+    letter-spacing: 0.5px;
+  }
+}
+
+// 📌 Form Styling
+.ownerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+// 📌 Fieldset Styling
+fieldset {
+  border: 2px solid $border-color;
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 1.2rem;
+  background: $background-light;
+
+  legend {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $secondary-color;
+    padding: 0 12px;
+    background: white;
+    border-radius: 6px;
+  }
+}
+
+// 📌 Form Groups (Inputs & Labels)
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+
+  label {
+    font-size: 1.05rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $secondary-color;
+  }
+
+  input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid $border-color;
+    font-size: 1rem;
+    background: white;
+    transition: border 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+      box-shadow: 0px 0px 8px rgba($primary-color, 0.3);
+    }
+  }
+}
+
+// 📌 Phone Input Section
+.phoneInput {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+
+  .countryCode {
+    width: 85px;
+    flex: 0.1;
+    max-width: 85px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:focus {
+      border-color: $accent-color;
+      box-shadow: 0px 0px 6px rgba($accent-color, 0.3);
+    }
+  }
+
+  .phoneNumber {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    font-size: 1rem;
+
+    &:focus {
+      border-color: $accent-color;
+      box-shadow: 0px 0px 6px rgba($accent-color, 0.3);
+    }
+  }
+}
+
+// 📌 Country Code Dropdown
+.phoneDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100px;
+  background: white;
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px $shadow-dark;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  .phoneOption {
+    padding: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.2s ease;
+
+    &:hover {
+      background: $background-dark;
+      color: $primary-color;
+    }
+  }
+}
+
+// 📌 Password Field with Toggle Button
+.passwordContainer {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding-right: 45px;
+  }
+
+  .togglePassword {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: $primary-color;
+  }
+}
+
+// 📌 Location Suggestions Dropdown
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px $shadow-dark;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  li {
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.2s ease;
+
+    &:hover {
+      background: $background-dark;
+      color: $primary-color;
+    }
+  }
+}
+
+// 📌 Actions (Save & Reset Buttons)
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+  }
+
+  // ✅ Save Button - Fixed Hover
+  .saveButton {
+    background: linear-gradient(45deg, rgba($success-color, 0.9), rgba($success-color, 0.8));
+    color: white;
+    box-shadow: 0px 5px 12px rgba($success-color, 0.3);
+
+    &:hover {
+      background: linear-gradient(45deg, rgba($success-color, 1), rgba($success-color, 0.85));
+      box-shadow: 0px 5px 16px rgba($success-color, 0.5);
+      transform: scale(1.04);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  // ✅ Reset Button - Fixed Hover
+  .resetButton {
+    background: linear-gradient(45deg, rgba($error-color, 0.9), rgba($error-color, 0.8));
+    color: white;
+    box-shadow: 0px 5px 12px rgba($error-color, 0.3);
+
+    &:hover {
+      background: linear-gradient(45deg, rgba($error-color, 1), rgba($error-color, 0.85));
+      box-shadow: 0px 5px 16px rgba($error-color, 0.5);
+      transform: scale(1.04);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+// 📌 Responsive Design
+@media (max-width: 768px) {
+  .addOwnerContainer {
+    padding: 1.5rem;
+  }
+
+  .phoneInput {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

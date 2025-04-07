@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+.supportTracker {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: 100%; /* Ensure it fills the grid row */
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* 📌 Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .progress {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 20px;
+  }
+}
+
+/* 📌 Progress Bar */
+.progressBar {
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+
+  .progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    transition: width 0.5s ease-in-out;
+  }
+}
+
+/* 📌 Ticket Container */
+.ticketContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 📌 New Ticket Alert */
+.newTicketAlert {
+  background: #ff9800;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+/* 🔄 Fade-in-out animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ✨ Animated Ticket Item */
+.ticketItem {
+  background: var(--card-bg);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+  &:hover {
+    background: var(--hover-color);
+    transform: scale(1.02);
+  }
+}
+
+/* 🚀 New Ticket Animation */
+@keyframes highlightNew {
+  from { background-color: rgba(255, 204, 128, 0.3); }
+  to { background-color: var(--card-bg); }
+}
+
+.ticketItem:nth-child(-n+3) {
+  animation: highlightNew 2s ease-in-out;
+}
+
+
+/* 📌 Ticket Card */
+.ticketCard {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    background: #eef3ff;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+    margin-right: 12px;
+  }
+
+  .ticketInfo {
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .supportTracker {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .ticketCard {
+    padding: 10px;
+  }
+}

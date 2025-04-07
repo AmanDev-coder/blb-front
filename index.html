@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preload all critical Poppins font weights -->
+    <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/poppins/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- Preload Work Sans font (primary weight) -->
+    <link rel="preload" href="/fonts/worksans/WorkSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Minimal inline font face declaration for immediate use -->
+    <style>
+      /* Immediate basic font definitions to prevent FOUT */
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+      }
+      
+      /* Default system font stack as fallback */
+      html, body, #root {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+      
+      /* Font loading indicator classes */
+      .fonts-loading {
+        /* Optional: Hide content until fonts load */
+        /* opacity: 0.8; */
+      }
+      
+      .fonts-loaded, .fonts-failed, .fonts-timeout {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+      
+      /* Critical styles that should be available immediately */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+    </style>
+    
+    <!-- Font detection helpers -->
+    <script>
+      // Enhanced font detection helper
+      window.fontHelper = {
+        // Check if a font is loaded and ready
+        checkLoaded: function(fontName) {
+          return document.fonts && document.fonts.check(`16px "${fontName}"`);
+        },
+        
+        // Load a font directly
+        loadFont: function(fontFamily, url) {
+          if (!window.FontFace) return Promise.reject('FontFace API not supported');
+          
+          return new Promise((resolve, reject) => {
+            const font = new FontFace(fontFamily, `url(${url})`);
+            font.load()
+              .then(loadedFont => {
+                document.fonts.add(loadedFont);
+                console.log(`Font loaded directly: ${fontFamily}`);
+                resolve(loadedFont);
+              })
+              .catch(err => {
+                console.error(`Failed to load font ${fontFamily}:`, err);
+                reject(err);
+              });
+          });
+        }
+      };
+      
+      // Pre-initialize flags
+      window.fontsPreloaded = false;
+      
+      // Listen for document fonts ready
+      if (document.fonts) {
+        document.fonts.ready.then(() => {
+          console.log('Browser reports document.fonts are ready');
+        });
+      }
+    </script>
+    
+    <!-- Clear font cache script for debugging font issues -->
+    <script src="/clear-font-cache.js"></script>
+    
+    <!-- Preload script runs before app loads -->
+    <script src="/preload-fonts.js"></script>
+    
+    <title>BookLuxYachts</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* 🌍 Wrapper Container (Red Background) */
+.wrapperContainer {
+  background: white;
+  padding: 1.5rem; /* Reduced padding */
+  border-radius: 12px;
+  display: flex;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 🌍 Visitors Main Grid Layout */
+.visitorGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Left: Map | Right: Insights */
+  // gap: 1.5rem; /* Reduced gap */
+  width: 100%;
+  max-width: 1000px; /* Slightly reduced width */
+  margin: auto;
+  align-items: center;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  // box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 🗺️ Map Container */
+.mapContainer {
+  background: #f9fafb;
+  padding: 1.2rem; /* Reduced padding */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem; /* Reduced gap */
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🌎 Title */
+.mapTitle {
+  font-size: 1.4rem; /* Slightly smaller */
+  font-weight: 600;
+  color: #0077ff;
+  text-transform: uppercase;
+}
+
+/* 🗺️ Interactive Map */
+.map {
+  width: 100%;
+  max-width: 500px; /* Reduced width */
+  min-height: 280px; /* Reduced height */
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* 🏳️ Country Styles */
+.geography {
+  stroke: #ffffff;
+  stroke-width: 0.6px;
+  transition: fill 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+  &:hover {
+    fill: #ff9900 !important;
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+}
+
+/* 🎯 Tooltip (Now Fixed at Bottom) */
+.tooltip {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 12px; /* Reduced padding */
+  border-radius: 6px;
+  font-size: 0.9rem; /* Reduced font size */
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  margin-top: 0.8rem; /* Adjusted margin */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 📊 Insights Panel */
+.rightComponent {
+  background: #ffffff;
+  padding: 1.2rem; /* Reduced padding */
+  border-radius: 12px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-right: 20px;
+}
+.rightWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  background: #f9fafb;
+}
+
+/* 📊 Insights Title */
+.rightComponent h3 {
+  font-size: 1.2rem; /* Reduced size */
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 📌 Insights List */
+.rightComponent ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.rightComponent li {
+  font-size: 1rem; /* Slightly smaller */
+  padding: 8px 0; /* Adjusted spacing */
+  font-weight: 600;
+  color: #444;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .visitorGrid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1rem;
+  }
+
+  .map {
+    max-width: 400px; /* Adjusted for smaller screens */
+    min-height: 250px;
+  }
+
+  .rightComponent {
+    padding: 1rem;
+  }
+}

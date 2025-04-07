@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* 🔔 Notification Wrapper */
+.notificationWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 🔔 Bell Icon */
+.bellIcon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0077ff;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #005bb5;
+  }
+}
+
+/* 🔴 Notification Badge */
+.badge {
+  background: #ff3b3b;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 6px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 18px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(255, 77, 77, 0.3);
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* 🔥 Pulse Animation for Badge */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+}
+
+/* 🔽 Dropdown Panel (Increased Width) */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 380px; /* Increased width */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  padding: 0; /* Removed padding, we'll add it to children */
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* ✅ Show Dropdown when Active */
+.dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Header with actions */
+.notifHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .markAllRead {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    color: #0077ff;
+    cursor: pointer;
+    padding: 0;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .settingsLink {
+    color: #555;
+    font-size: 1rem;
+    
+    &:hover {
+      color: #0077ff;
+    }
+  }
+}
+
+/* 📌 Notification List */
+.notificationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ddd transparent;
+  
+  /* Custom scrollbar styling */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+  }
+}
+
+/* 📌 Notification Item */
+.notificationItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.3s ease-in-out;
+  position: relative;
+  font-size: 0.95rem;
+  color: #222;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+
+  &:hover {
+    background: #f0f4fd;
+  }
+  
+  /* Unread state */
+  &.unread {
+    background: #f0f7ff;
+    border-left-color: #0077ff;
+    
+    .notifMessage {
+      font-weight: 600;
+    }
+  }
+  
+  /* Detail arrow icon */
+  .detailIcon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  
+  &:hover .detailIcon {
+    opacity: 1;
+    transform: translateY(-50%) translateX(2px);
+  }
+  
+  /* Severity styles */
+  &.info {
+    border-left-color: #0077ff;
+    
+    .notifIcon {
+      color: #0077ff;
+    }
+  }
+  
+  &.success {
+    border-left-color: #28a745;
+    
+    .notifIcon {
+      color: #28a745;
+    }
+  }
+  
+  &.warning {
+    border-left-color: #ffc107;
+    
+    .notifIcon {
+      color: #ffc107;
+    }
+  }
+  
+  &.critical {
+    border-left-color: #dc3545;
+    
+    .notifIcon {
+      color: #dc3545;
+    }
+  }
+
+  /* 📌 Left Side (Icon & Message) */
+  .notifContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    padding-right: 20px;
+  }
+
+  .notifIcon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .notifMessage {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  /* 📌 Right Side (Time & Close Icon) */
+  .notifRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap; /* ✅ Prevents line break */
+    margin-left: auto;
+  }
+}
+
+/* ⏳ Timestamp (Single Line) */
+.timestamp {
+  font-size: 0.75rem;
+  color: #777;
+  white-space: nowrap; /* ✅ Ensures timestamp stays in one line */
+}
+
+/* ❌ Close (Dismiss) Icon */
+.closeIcon {
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #777;
+  transition: color 0.3s ease-in-out;
+  z-index: 2;
+
+  &:hover {
+    color: #dc3545;
+  }
+}
+
+/* 📌 No Notifications */
+.noNotifications {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  
+  .settingsLink {
+    font-size: 0.85rem;
+    color: #0077ff;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .dropdown {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    width: 280px;
+    right: -40px;
+  }
+  
+  .notificationItem {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown {
+    width: 280px;
+    right: -100px;
+  }
+}

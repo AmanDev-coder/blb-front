@@ -1,0 +1,146 @@
+/* Main container for the form */
+#profile-update-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+  
+    /* Add animation for appearance */
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Heading styles */
+  #profile-update-heading {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 16px;
+    text-align: left;
+    border-bottom: 2px solid #4e8fff;
+    padding-bottom: 8px;
+  }
+  
+  /* Subheading styles */
+  #profile-update-subheading {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 24px;
+    line-height: 1.8;
+    text-align: left;
+  }
+  
+  /* Form styles */
+  #profile-update-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+    gap: 20px; /* Gap between form fields */
+  
+    /* Responsive layout for smaller screens */
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; /* Single column on small screens */
+    }
+  }
+  
+  /* Input group styles */
+  .profile-input-group {
+    display: flex;
+    flex-direction: column;
+  
+    /* Label styles */
+    .label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 6px;
+      text-transform: capitalize; /* Modern touch */
+    }
+  
+    /* Input field styles */
+    .profile-input,
+    .profile-select {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 14px;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      background-color: #fafafa;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+  
+      &:focus {
+        border-color: #4e8fff;
+        background-color: #ffffff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+      }
+  
+      &::placeholder {
+        color: #999999;
+        font-style: italic;
+      }
+    }
+  }
+  
+  /* Full-width input for specific fields */
+  .profile-input-full {
+    grid-column: span 2;
+  
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+  
+  /* Button styles */
+  #save-changes-button {
+    grid-column: span 2; /* Full-width button */
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+      box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.2);
+    }
+  
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+  
+  /* Responsive styles for large screens */
+  @media (min-width: 1200px) {
+    #profile-update-container {
+      padding: 60px;
+      max-width: 1400px;
+    }
+  
+    #profile-update-heading {
+      font-size: 28px;
+    }
+  }
+  

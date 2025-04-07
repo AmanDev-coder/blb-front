@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* 🌍 Main Container */
+.mapContainer {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* 📍 Map Title */
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e88e5;
+}
+
+/* 🔍 Filter Dropdown */
+.filterBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+
+  select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  select:hover {
+    border-color: #1e88e5;
+  }
+}
+
+/* 🗺️ Map */
+.map {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 📌 Marker Popup */
+.leaflet-popup-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.leaflet-popup h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.leaflet-popup p {
+  font-size: 1rem;
+  margin: 2px 0;
+}

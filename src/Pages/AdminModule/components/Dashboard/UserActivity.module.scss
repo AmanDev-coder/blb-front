@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+
+// cehck line no 105
+/* 📌 Grid Container */
+.activityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🔥 3 equal columns */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+//   margin: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🔹 Each Section Box */
+.section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease-in-out;
+  min-height: 280px;
+  
+  &:hover {
+    // transform: translateY(-5px);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* 📌 Section Titles */
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 📌 List Styling */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+/* 📌 List Items */
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease-in-out;
+  position: relative;
+cursor: pointer;
+  &:hover {
+    background: #eef3ff;
+  }
+}
+
+/* 📌 Icons */
+.icon {
+  font-size: 1.4rem;
+  color: #ff9f00;
+}
+
+/* 🏆 Approve & Reject Icons */
+.approve, .reject {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.approve {
+  color: #28a745;
+
+  &:hover {
+    color: #1e7e34;
+  }
+}
+
+.reject {
+  color: #dc3545;
+
+  &:hover {
+    color: #bd2130;
+  }
+}
+
+/* 📌 User Details */
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  margin: 0;
+}
+
+span {
+  font-size: 0.85rem;
+  // color: #777;
+}
+
+/* 📌 Action Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* 📱 Responsive Grid Layout */
+@media (max-width: 1024px) {
+  .activityGrid {
+    grid-template-columns: 1fr 1fr; /* ✅ 2 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .activityGrid {
+    grid-template-columns: 1fr; /* ✅ Single Column */
+  }
+}

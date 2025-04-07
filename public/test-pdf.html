@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jsPDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable@3.5.28/dist/jspdf.plugin.autotable.js"></script>
+</head>
+<body>
+    <h1>Test jsPDF</h1>
+    <button id="generatePDF">Generate PDF</button>
+
+    <script>
+        document.getElementById('generatePDF').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            
+            try {
+                // Create a new jsPDF instance
+                const doc = new jsPDF();
+                
+                // Add text
+                doc.text("Test PDF Document", 20, 20);
+                
+                // Create a table
+                const tableColumn = ["Name", "Email", "Country"];
+                const tableRows = [
+                    ["John Doe", "john@example.com", "USA"],
+                    ["Jane Smith", "jane@example.com", "Canada"],
+                    ["Mike Johnson", "mike@example.com", "UK"]
+                ];
+                
+                // Generate the table
+                doc.autoTable({
+                    head: [tableColumn],
+                    body: tableRows,
+                    startY: 30
+                });
+                
+                // Save the PDF
+                doc.save("test.pdf");
+                
+                console.log("PDF generated successfully");
+            } catch (error) {
+                console.error("Error generating PDF:", error);
+                alert("Error generating PDF: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html> 

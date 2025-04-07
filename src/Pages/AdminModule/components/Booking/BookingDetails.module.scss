@@ -1,0 +1,432 @@
+// Variables
+$primary-color: #007bff;
+$success-color: #28a745;
+$warning-color: #ffc107;
+$error-color: #dc3545;
+$border-color: #ddd;
+$text-color: #333;
+$background-light: #f8f9fa;
+
+.bookingDetailsContainer {
+  background: white;
+  border-radius: 14px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 0.5rem;
+  
+  h2 {
+    font-size: 1.6rem;
+    color: $text-color;
+    margin: 0;
+    
+    @media (max-width: 576px) {
+      font-size: 1.4rem;
+    }
+  }
+  
+  .backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: rgba($primary-color, 0.1);
+    color: $primary-color;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba($primary-color, 0.2);
+    }
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 0.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailsCard {
+  background: $background-light;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cardHeader {
+  background: $primary-color;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .icon {
+    font-size: 1.4rem;
+  }
+}
+
+.cardContent {
+  padding: 1.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba($border-color, 0.6);
+  flex-wrap: wrap;
+  gap: 8px;
+  
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.label {
+  font-weight: 600;
+  color: $text-color;
+  min-width: 120px;
+  max-width: 40%;
+  
+  @media (max-width: 576px) {
+    max-width: 100%;
+  }
+}
+
+.value {
+  color: #555;
+  text-align: right;
+  flex: 1;
+  
+  @media (max-width: 576px) {
+    text-align: left;
+    width: 100%;
+  }
+  
+  &.confirmed, &.paid {
+    color: $success-color;
+    font-weight: 600;
+  }
+  
+  &.pending {
+    color: $warning-color;
+    font-weight: 600;
+  }
+  
+  &.cancelled {
+    color: $error-color;
+    font-weight: 600;
+  }
+}
+
+.totalRow {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px solid $border-color;
+  font-size: 1.2rem;
+  font-weight: 600;
+  
+  .label, .value {
+    color: $primary-color;
+  }
+}
+
+.paymentDetails {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paymentMethod, .paymentStatus {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Document Styles - Updated to stacked list format */
+.documentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.documentListItem {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba($border-color, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.documentMain {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.documentIconSmall {
+  font-size: 1.2rem;
+  color: $primary-color;
+  margin-right: 12px;
+  background: rgba($primary-color, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 35px;
+  height: 35px;
+  
+  @media (max-width: 576px) {
+    margin-right: 0;
+  }
+}
+
+.documentInfo {
+  flex: 1;
+  min-width: 0; // Important for text overflow to work
+  
+  h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: $text-color;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  p {
+    margin: 0 0 5px 0;
+    font-size: 0.85rem;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .uploadDate {
+    font-size: 0.75rem;
+    color: #888;
+    display: block;
+  }
+}
+
+.documentActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  border-top: 1px solid rgba($border-color, 0.6);
+  padding-top: 10px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 576px) {
+    justify-content: space-between;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+    min-width: 100px;
+    
+    &.viewBtn {
+      color: $primary-color;
+      background: rgba($primary-color, 0.1);
+      
+      &:hover {
+        background: rgba($primary-color, 0.2);
+      }
+    }
+    
+    &.downloadBtn {
+      color: $success-color;
+      background: rgba($success-color, 0.1);
+      
+      &:hover {
+        background: rgba($success-color, 0.2);
+      }
+    }
+  }
+}
+
+// Remove the old grid layout styles
+.documentsCard {
+  // grid-column: 1 / -1; // No longer needed
+}
+
+.documentsGrid {
+  // Retain but not used
+  display: none;
+}
+
+/* Document specific styles updated to match other detail items */
+.documentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 70%;
+}
+
+.documentInfo {
+  display: flex;
+  flex-direction: column;
+  
+  .docType {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+  
+  .docName {
+    font-size: 0.85rem;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 180px;
+    
+    @media (max-width: 576px) {
+      max-width: 100%;
+      white-space: normal;
+    }
+  }
+  
+  .uploadDate {
+    font-size: 0.75rem;
+    color: #888;
+  }
+}
+
+.documentIconSmall {
+  font-size: 1.2rem;
+  color: $primary-color;
+  background: rgba($primary-color, 0.1);
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.documentActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  
+  @media (max-width: 576px) {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  button {
+    border: none;
+    font-size: 1rem;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    width: 30px;
+    height: 30px;
+    
+    &.viewBtn {
+      color: $primary-color;
+      background: rgba($primary-color, 0.1);
+      
+      &:hover {
+        background: rgba($primary-color, 0.2);
+      }
+    }
+    
+    &.downloadBtn {
+      color: $success-color;
+      background: rgba($success-color, 0.1);
+      
+      &:hover {
+        background: rgba($success-color, 0.2);
+      }
+    }
+  }
+}
+
+// Clean up unused styles
+.documentsList, .documentListItem, .documentMain {
+  display: none;
+} 

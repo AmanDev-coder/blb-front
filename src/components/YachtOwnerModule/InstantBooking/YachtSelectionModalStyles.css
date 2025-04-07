@@ -1,0 +1,41 @@
+/* YachtSelectionModal.css */
+.yacht-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .yacht-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .yacht-card:hover {
+    background: #f0f0f0;
+  }
+  
+  .yacht-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .yacht-details h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .yacht-details p {
+    font-size: 14px;
+    color: #666;
+  }
+  

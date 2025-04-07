@@ -1,0 +1,64 @@
+/**
+ * Font Override Stylesheet
+ * This file contains styles to ensure our font choices are applied throughout the application.
+ */
+
+/* Root level font definitions for consistency */
+:root {
+  --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Default styles for all elements */
+html, body, #root {
+  font-family: var(--font-family-primary);
+}
+
+/* Apply these styles only when fonts are successfully loaded */
+html.fonts-loaded,
+body.fonts-loaded {
+  /* Update CSS variables with loaded fonts */
+  :root {
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-family-heading: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-family-secondary: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  
+  /* Apply Poppins font to all elements */
+  &, * {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  
+  /* Apply Work Sans to elements with the secondary-font class */
+  .secondary-font,
+  .font-secondary,
+  [data-font="secondary"] {
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  
+  /* Apply to specific element types for higher specificity */
+  input, textarea, select, button,
+  h1, h2, h3, h4, h5, h6,
+  p, a, span, div, li {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+/* Style to display when fonts have failed to load */
+html.fonts-failed,
+html.fonts-timeout,
+body.fonts-failed,
+body.fonts-timeout {
+  /* CSS variable updates with system fonts */
+  :root {
+    --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Poppins, sans-serif;
+    --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Poppins, sans-serif;
+    --font-family-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Poppins, sans-serif;
+  }
+  
+  /* Apply system fonts to all elements */
+  &, * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Poppins, sans-serif;
+  }
+}

@@ -1,0 +1,117 @@
+{
+    "revenue": [
+        { "month": "January", "amount": 100000, "date": "2024-01-15" },
+        { "month": "February", "amount": 120000, "date": "2024-02-15" },
+        { "month": "March", "amount": 135000, "date": "2024-03-15" },
+        { "month": "April", "amount": 150000, "date": "2024-04-15" },
+        { "month": "May", "amount": 170000, "date": "2024-05-15" },
+        { "month": "June", "amount": 190000, "date": "2024-06-15" },
+        { "month": "July", "amount": 205000, "date": "2024-07-15" },
+        { "month": "August", "amount": 230000, "date": "2024-08-15" },
+        { "month": "September", "amount": 250000, "date": "2024-09-15" },
+        { "month": "October", "amount": 275000, "date": "2024-10-15" },
+        { "month": "November", "amount": 290000, "date": "2024-11-15" },
+        { "month": "December", "amount": 310000, "date": "2024-12-15" }
+    ],
+    "profit": [
+        { "month": "January", "profit": 50000, "date": "2024-01-15" },
+        { "month": "February", "profit": 65000, "date": "2024-02-15" },
+        { "month": "March", "profit": 70000, "date": "2024-03-15" },
+        { "month": "April", "profit": 80000, "date": "2024-04-15" },
+        { "month": "May", "profit": 95000, "date": "2024-05-15" },
+        { "month": "June", "profit": 110000, "date": "2024-06-15" },
+        { "month": "July", "profit": 120000, "date": "2024-07-15" },
+        { "month": "August", "profit": 130000, "date": "2024-08-15" },
+        { "month": "September", "profit": 145000, "date": "2024-09-15" },
+        { "month": "October", "profit": 160000, "date": "2024-10-15" },
+        { "month": "November", "profit": 175000, "date": "2024-11-15" },
+        { "month": "December", "profit": 190000, "date": "2024-12-15" }
+    ],
+    "bookings": [
+        { "date": "2024-03-01", "count": 45, "user": "John Doe", "yacht": "Luxury Yacht A" },
+        { "date": "2024-03-02", "count": 50, "user": "Jane Smith", "yacht": "Sunseeker 88" },
+        { "date": "2024-03-03", "count": 55, "user": "Michael Johnson", "yacht": "Azimut Grande" },
+        { "date": "2024-03-04", "count": 60, "user": "Emily Brown", "yacht": "Prestige 590" },
+        { "date": "2024-03-05", "count": 65, "user": "David White", "yacht": "Ferretti 920" },
+        { "date": "2024-03-06", "count": 70, "user": "Anna Martin", "yacht": "Riva 100 Corsaro" },
+        { "date": "2024-03-07", "count": 75, "user": "Robert Garcia", "yacht": "Benetti Oasis 40M" },
+        { "date": "2024-03-08", "count": 80, "user": "Sophia Lee", "yacht": "Mangusta 165" },
+        { "date": "2024-03-09", "count": 85, "user": "Daniel Kim", "yacht": "Princess 95" },
+        { "date": "2024-03-10", "count": 95, "user": "John Doe", "yacht": "Luxury Yacht A" },
+        { "date": "2024-03-11", "count": 100, "user": "Jane Smith", "yacht": "Sunseeker 88" },
+        { "date": "2024-03-12", "count": 110, "user": "Michael Johnson", "yacht": "Azimut Grande" },
+        { "date": "2024-03-13", "count": 120, "user": "Emily Brown", "yacht": "Prestige 590" },
+        { "date": "2024-03-14", "count": 130, "user": "David White", "yacht": "Ferretti 920" },
+        { "date": "2024-03-15", "count": 140, "user": "Anna Martin", "yacht": "Riva 100 Corsaro" }
+    ],
+    "transactions": [
+        { "date": "2024-03-01", "amount": 5000, "type": "deposit", "transactionNumber": "TXN001", "user": "John Doe", "yacht": "Luxury Cruiser", "transactionCode": "ABC12345678901234567", "status": "Completed", "phone": "+1-555-1234" },
+        { "date": "2024-03-02", "amount": 7000, "type": "withdrawal", "transactionNumber": "TXN002", "user": "Alice Johnson", "yacht": "Ocean Explorer", "transactionCode": "DEF45678901234567890", "status": "Pending", "phone": "+1-555-5678" },
+        { "date": "2024-03-03", "amount": 5500, "type": "deposit", "transactionNumber": "TXN003", "user": "Michael Brown", "yacht": "Sea Voyager", "transactionCode": "GHI78901234567890123", "status": "Failed", "phone": "+1-555-8765" },
+        { "date": "2024-03-04", "amount": 7500, "type": "withdrawal", "transactionNumber": "TXN004", "user": "Emma White", "yacht": "Island Hopper", "transactionCode": "JKL01234567890123456", "status": "Completed", "phone": "+1-555-4321" },
+        { "date": "2024-03-05", "amount": 6000, "type": "deposit", "transactionNumber": "TXN005", "user": "Liam Harris", "yacht": "Sunset Dreamer", "transactionCode": "MNO34567890123456789", "status": "Pending", "phone": "+1-555-6789" },
+        { "date": "2024-03-06", "amount": 8000, "type": "withdrawal", "transactionNumber": "TXN006", "user": "John Doe", "yacht": "Luxury Cruiser", "transactionCode": "PQR67890123456789012", "status": "Completed", "phone": "+1-555-1234" },
+        { "date": "2024-03-07", "amount": 9000, "type": "deposit", "transactionNumber": "TXN007", "user": "Alice Johnson", "yacht": "Ocean Explorer", "transactionCode": "STU90123456789012345", "status": "Pending", "phone": "+1-555-5678" },
+        { "date": "2024-03-08", "amount": 10500, "type": "deposit", "transactionNumber": "TXN008", "user": "Michael Brown", "yacht": "Sea Voyager", "transactionCode": "VWX23456789012345678", "status": "Failed", "phone": "+1-555-8765" },
+        { "date": "2024-03-09", "amount": 9500, "type": "withdrawal", "transactionNumber": "TXN009", "user": "Emma White", "yacht": "Island Hopper", "transactionCode": "YZA56789012345678901", "status": "Completed", "phone": "+1-555-4321" },
+        { "date": "2024-03-10", "amount": 11000, "type": "deposit", "transactionNumber": "TXN010", "user": "Liam Harris", "yacht": "Sunset Dreamer", "transactionCode": "BCD89012345678901234", "status": "Pending", "phone": "+1-555-6789" }
+    ],
+    "users": [
+        { "date": "2024-03-01", "newUsers": 220, "name": "John Doe", "email": "john@example.com", "contact": "+1 (555) 1234", "status": "Active", "role": "Customer", "lastActive": "2024-03-15" },
+        { "date": "2024-03-02", "newUsers": 250, "name": "Jane Smith", "email": "jane@example.com", "contact": "+1 (555) 5678", "status": "Active", "role": "Owner", "lastActive": "2024-03-14" },
+        { "date": "2024-03-03", "newUsers": 270, "name": "Michael Johnson", "email": "michael@example.com", "contact": "+1 (555) 9012", "status": "Inactive", "role": "Customer", "lastActive": "2024-03-10" },
+        { "date": "2024-03-04", "newUsers": 290, "name": "Emily Brown", "email": "emily@example.com", "contact": "+1 (555) 3456", "status": "Active", "role": "Owner", "lastActive": "2024-03-13" },
+        { "date": "2024-03-05", "newUsers": 310, "name": "David White", "email": "david@example.com", "contact": "+1 (555) 7890", "status": "Pending", "role": "Customer", "lastActive": "2024-03-08" },
+        { "date": "2024-03-06", "newUsers": 330, "name": "Anna Martin", "email": "anna@example.com", "contact": "+1 (555) 2345", "status": "Active", "role": "Owner", "lastActive": "2024-03-15" },
+        { "date": "2024-03-07", "newUsers": 350, "name": "Robert Garcia", "email": "robert@example.com", "contact": "+1 (555) 6789", "status": "Inactive", "role": "Customer", "lastActive": "2024-03-09" },
+        { "date": "2024-03-08", "newUsers": 370, "name": "Sophia Lee", "email": "sophia@example.com", "contact": "+1 (555) 0123", "status": "Active", "role": "Owner", "lastActive": "2024-03-14" },
+        { "date": "2024-03-09", "newUsers": 390, "name": "Daniel Kim", "email": "daniel@example.com", "contact": "+33 (612) 876543", "status": "Pending", "role": "Customer", "lastActive": "2024-03-11" },
+        { "date": "2024-03-10", "newUsers": 420, "name": "Olivia Williams", "email": "olivia@example.com", "contact": "+1 (555) 8901", "status": "Active", "role": "Owner", "lastActive": "2024-03-15" }
+    ],
+    "yachts": [
+        { "name": "Luxury Yacht A", "owner": "John Doe", "price": 500000, "date": "2024-01-10", "status": "Available", "location": "Miami, FL", "capacity": 12 },
+        { "name": "Sunseeker 88", "owner": "Jane Smith", "price": 750000, "date": "2024-01-15", "status": "Booked", "location": "San Diego, CA", "capacity": 10 },
+        { "name": "Azimut Grande", "owner": "Michael Johnson", "price": 1000000, "date": "2024-01-20", "status": "Available", "location": "New York, NY", "capacity": 14 },
+        { "name": "Prestige 590", "owner": "Emily Brown", "price": 650000, "date": "2024-02-05", "status": "Under Maintenance", "location": "Seattle, WA", "capacity": 8 },
+        { "name": "Ferretti 920", "owner": "David White", "price": 1200000, "date": "2024-02-10", "status": "Available", "location": "Fort Lauderdale, FL", "capacity": 16 },
+        { "name": "Riva 100 Corsaro", "owner": "Anna Martin", "price": 1500000, "date": "2024-02-15", "status": "Booked", "location": "Los Angeles, CA", "capacity": 18 },
+        { "name": "Benetti Oasis 40M", "owner": "Robert Garcia", "price": 1800000, "date": "2024-02-20", "status": "Available", "location": "Chicago, IL", "capacity": 20 },
+        { "name": "Mangusta 165", "owner": "Sophia Lee", "price": 2500000, "date": "2024-03-01", "status": "Under Maintenance", "location": "Boston, MA", "capacity": 24 },
+        { "name": "Princess 95", "owner": "Daniel Kim", "price": 850000, "date": "2024-03-05", "status": "Available", "location": "Honolulu, HI", "capacity": 12 }
+    ],
+    "yachtOwners": [
+        { "name": "John Doe", "yachts": 5, "payout": 10000, "email": "john@example.com", "contact": "+1 (555) 1234", "location": "Miami, FL", "revenue": "$450K", "status": "Active", "date": "2024-01-10" },
+        { "name": "Jane Smith", "yachts": 3, "payout": 8000, "email": "jane@example.com", "contact": "+44 (770) 0900123", "location": "London, UK", "revenue": "$300K", "status": "Active", "date": "2024-01-15" },
+        { "name": "Michael Johnson", "yachts": 4, "payout": 12000, "email": "michael@example.com", "contact": "+33 (612) 345678", "location": "Nice, France", "revenue": "$200K", "status": "Active", "date": "2024-01-20" },
+        { "name": "Emily Brown", "yachts": 2, "payout": 6000, "email": "emily@example.com", "contact": "+49 (171) 2345678", "location": "Hamburg, Germany", "revenue": "$380K", "status": "Active", "date": "2024-02-05" },
+        { "name": "David White", "yachts": 6, "payout": 14000, "email": "david@example.com", "contact": "+34 (600) 123456", "location": "Barcelona, Spain", "revenue": "$500K", "status": "Active", "date": "2024-02-10" },
+        { "name": "Anna Martin", "yachts": 7, "payout": 18000, "email": "anna@example.com", "contact": "+34 (600) 654321", "location": "Madrid, Spain", "revenue": "$220K", "status": "Pending", "date": "2024-02-15" },
+        { "name": "Robert Garcia", "yachts": 4, "payout": 9000, "email": "robert@example.com", "contact": "+1 (555) 5678", "location": "New York, NY", "revenue": "$330K", "status": "Active", "date": "2024-02-20" },
+        { "name": "Sophia Lee", "yachts": 5, "payout": 11000, "email": "sophia@example.com", "contact": "+44 (770) 0987654", "location": "Edinburgh, UK", "revenue": "$150K", "status": "Suspended", "date": "2024-03-01" },
+        { "name": "Daniel Kim", "yachts": 3, "payout": 7500, "email": "daniel@example.com", "contact": "+33 (612) 876543", "location": "Paris, France", "revenue": "$400K", "status": "Active", "date": "2024-03-05" }
+    ],
+    "payouts": [
+        { "name": "John Doe", "payout": 10000, "yachts": 5, "payoutDate": "2024-03-01", "status": "Paid", "method": "Bank Transfer" },
+        { "name": "Jane Smith", "payout": 8000, "yachts": 3, "payoutDate": "2024-03-01", "status": "Paid", "method": "PayPal" },
+        { "name": "Michael Johnson", "payout": 12000, "yachts": 4, "payoutDate": "2024-03-02", "status": "Paid", "method": "Bank Transfer" },
+        { "name": "Emily Brown", "payout": 6000, "yachts": 2, "payoutDate": "2024-03-02", "status": "Paid", "method": "PayPal" },
+        { "name": "David White", "payout": 14000, "yachts": 6, "payoutDate": "2024-03-03", "status": "Paid", "method": "Bank Transfer" },
+        { "name": "Anna Martin", "payout": 18000, "yachts": 7, "payoutDate": "2024-03-03", "status": "Paid", "method": "Check" },
+        { "name": "Robert Garcia", "payout": 9000, "yachts": 4, "payoutDate": "2024-03-04", "status": "Paid", "method": "Bank Transfer" },
+        { "name": "Sophia Lee", "payout": 11000, "yachts": 5, "payoutDate": "2024-03-04", "status": "Paid", "method": "PayPal" },
+        { "name": "Daniel Kim", "payout": 7500, "yachts": 3, "payoutDate": "2024-03-05", "status": "Paid", "method": "Bank Transfer" }
+    ],
+    "recentBookings": [
+        { "id": "B001", "customer": "John Smith", "yacht": "Luxury Cruiser", "date": "2024-03-01", "duration": "3 days", "amount": 1500, "status": "Confirmed" },
+        { "id": "B002", "customer": "Emily Johnson", "yacht": "Ocean Explorer", "date": "2024-03-02", "duration": "5 days", "amount": 2500, "status": "Pending" },
+        { "id": "B003", "customer": "Michael Brown", "yacht": "Coastal Voyager", "date": "2024-03-03", "duration": "2 days", "amount": 1200, "status": "Confirmed" },
+        { "id": "B004", "customer": "Sarah Davis", "yacht": "Island Dreamer", "date": "2024-03-04", "duration": "7 days", "amount": 4200, "status": "Cancelled" },
+        { "id": "B005", "customer": "Robert Wilson", "yacht": "Sea Breeze", "date": "2024-03-05", "duration": "4 days", "amount": 1800, "status": "Confirmed" },
+        { "id": "B006", "customer": "Jennifer Lee", "yacht": "Wave Runner", "date": "2024-03-06", "duration": "3 days", "amount": 1600, "status": "Pending" },
+        { "id": "B007", "customer": "David Chen", "yacht": "Horizon Finder", "date": "2024-03-07", "duration": "5 days", "amount": 2700, "status": "Confirmed" },
+        { "id": "B008", "customer": "Lisa Taylor", "yacht": "Ocean Jewel", "date": "2024-03-08", "duration": "2 days", "amount": 1100, "status": "Cancelled" },
+        { "id": "B009", "customer": "James Miller", "yacht": "Sunset Chaser", "date": "2024-03-09", "duration": "6 days", "amount": 3200, "status": "Confirmed" },
+        { "id": "B010", "customer": "Karen White", "yacht": "Blue Horizon", "date": "2024-03-10", "duration": "4 days", "amount": 2100, "status": "Pending" }
+    ]
+}
+  

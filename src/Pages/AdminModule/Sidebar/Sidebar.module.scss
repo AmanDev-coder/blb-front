@@ -1,0 +1,112 @@
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    background: #2c3e50; /* Simple dark background */
+    color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    z-index: 1000;
+    overflow-y: auto;
+  
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: white;
+      display: flex;
+      align-items: center;
+  
+      span {
+        color: #50abc7;
+        margin-left: 0.5rem;
+      }
+    }
+  
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      .menuItem {
+        margin-bottom: 1rem;
+  
+        .menuHeader {
+          display: flex;
+          align-items: center;
+          padding: 0.75rem 1rem;
+          color: white;
+          cursor: pointer;
+          border-radius: 4px;
+          transition: background 0.3s;
+  
+          i {
+            margin-right: 8px; /* Consistent spacing between icon and text */
+          }
+  
+          &:hover {
+            background: #34495e; /* Light hover effect */
+          }
+  
+          &.active {
+            background: #50abc7;
+          }
+        }
+  
+        .subMenu {
+          display: none;
+          flex-direction: column;
+          padding-left: 1rem;
+          margin-top: 0.5rem;
+  
+          &.show {
+            display: flex;
+          }
+  
+          .subMenuItem {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            color: #ddd;
+            transition: background 0.3s;
+  
+            &:hover {
+              background: #50abc7;
+              color: white;
+            }
+  
+            &.activeLink {
+              background: #50abc7;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  
+    /* Scrollbar Styling */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 4px;
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+  
+      &.open {
+        transform: translateX(0);
+      }
+    }
+  }
+  

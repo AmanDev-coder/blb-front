@@ -1,0 +1,132 @@
+/**
+ * Font Override Stylesheet
+ * This file contains styles with high specificity to ensure our font choices
+ * are applied throughout the application, overriding any third-party styles.
+ */
+
+/* Apply Poppins font to all elements */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+textarea,
+select,
+button {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Apply Work Sans to elements with the secondary-font class */
+.secondary-font,
+.font-secondary,
+.alt-font,
+[data-font="secondary"] {
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Super high-specificity selectors for framework overrides */
+html body .MuiTypography-root,
+html body .MuiButton-root,
+html body .ant-typography,
+html body .ant-btn,
+html body .bootstrap-class,
+html body .navbar,
+html body .dropdown,
+html body .toast,
+html body .modal,
+html body .popover,
+html body .tooltip,
+html body .chakra-text,
+html body .chakra-button,
+html body [class*="css-"] {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Override input placeholders */
+::placeholder {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Override text inside SVGs or other special elements */
+text,
+foreignObject,
+[contenteditable="true"] {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}

@@ -1,0 +1,78 @@
+.pricing-accordion {
+    margin-bottom: 20px;
+  }
+  
+  .pricing-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .pricing-label {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .pricing-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    color: #333;
+  
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+  }
+  
+  .accordion {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f4f4f4;
+    cursor: pointer;
+  
+    h4 {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+  
+    span {
+      font-size: 18px;
+      color: #007bff;
+      font-weight: bold;
+    }
+  }
+  
+  .accordion-content {
+    padding: 10px 15px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+  }
+  
+  .pricing-breakdown {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .pricing-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #333;
+  }
+  

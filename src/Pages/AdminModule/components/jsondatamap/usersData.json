@@ -1,0 +1,21 @@
+[
+    {
+      "id": "#U101",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "contact": "+1 (555) 123-4567",
+      "role": "Admin",
+      "status": "Active",
+      "profileImg": "https://randomuser.me/api/portraits/men/10.jpg"
+    },
+    {
+      "id": "#U102",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "contact": "+44 (770) 123-4567",
+      "role": "User",
+      "status": "Pending",
+      "profileImg": "https://randomuser.me/api/portraits/women/11.jpg"
+    }
+  ]
+  

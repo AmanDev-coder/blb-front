@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* 📌 Main Yacht Container */
+.yachtContainer {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* 📌 Add Yacht Button */
+.addYachtBtn {
+  background: #0077ff;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: #005bb5;
+  }
+}
+
+/* 📜 Yacht List */
+.yachtList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* 🚢 Yacht Card */
+.yachtCard {
+  background: #f9fafb;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* 🖼️ Yacht Image */
+.yachtImage {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+/* 🔧 Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0.8rem;
+}
+
+/* ✏ Edit Button */
+.editBtn, .deleteBtn {
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+}
+
+.editBtn {
+  background: #ffcc00;
+  color: #333;
+
+  &:hover {
+    background: #e6b800;
+  }
+}
+
+/* 🗑 Delete Button */
+.deleteBtn {
+  background: #ff4d4d;
+  color: white;
+
+  &:hover {
+    background: #cc0000;
+  }
+}
+
+/* 📝 Yacht Form */
+.yachtForm {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.yachtForm input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.yachtForm button {
+  background: #0077ff;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: #005bb5;
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .yachtList {
+    grid-template-columns: 1fr;
+  }
+}

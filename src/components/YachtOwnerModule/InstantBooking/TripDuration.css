@@ -1,0 +1,53 @@
+.trip-duration {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trip-duration-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.trip-duration-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trip-duration-btn {
+  width: 35px;
+  height: 35px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.trip-duration-btn:hover {
+  background-color: #0056b3;
+}
+
+.trip-duration-input {
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.trip-duration-max {
+  font-size: 14px;
+  color: #666;
+}

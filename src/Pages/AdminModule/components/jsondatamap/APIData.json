@@ -1,0 +1,57 @@
+{
+  "apiKeys": [
+    { "id": 1, "name": "Primary API Key", "key": "sk_live_abcdefghijk123456", "status": "active" },
+    { "id": 2, "name": "Backup API Key", "key": "sk_live_zyxwvutsrqpo987654", "status": "revoked" }
+  ],
+  "webhooks": [
+    { "id": 1, "url": "https://yourwebhook.com/payment", "events": "Payment Success", "status": "active" },
+    { "id": 2, "url": "https://yourwebhook.com/failure", "events": "Payment Failure", "status": "inactive" }
+  ],
+  "logs": [
+    { "id": 1, "endpoint": "/api/payments", "method": "POST", "status": "200", "date": "2024-03-22" },
+    { "id": 2, "endpoint": "/api/users", "method": "GET", "status": "403", "date": "2024-03-22" },
+    { "id": 3, "endpoint": "/api/orders", "method": "POST", "status": "500", "date": "2024-03-21" }
+  ],
+  "analyticsData": [
+    { "day": "Monday", "requests": 1200, "success": 1100, "failed": 100 },
+    { "day": "Tuesday", "requests": 1300, "success": 1250, "failed": 50 },
+    { "day": "Wednesday", "requests": 1000, "success": 970, "failed": 30 },
+    { "day": "Thursday", "requests": 1400, "success": 1300, "failed": 100 }
+  ],
+  "integrations": [
+    { 
+      "id": 1, 
+      "name": "Google OAuth", 
+      "status": "Connected", 
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
+      "configFields": [
+        { "name": "clientId", "value": "123456789-abcdef.apps.googleusercontent.com", "type": "text" },
+        { "name": "clientSecret", "value": "GOCSPX-abcdefghijklmno", "type": "password" },
+        { "name": "redirectUri", "value": "https://yourdomain.com/auth/google/callback", "type": "text" }
+      ]
+    },
+    { 
+      "id": 2, 
+      "name": "Stripe", 
+      "status": "Connected", 
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/0/03/Stripe_Logo%2C_revised_2016.svg",
+      "configFields": [
+        { "name": "publicKey", "value": "pk_live_51AbCdEfGhIjKlMnOpQrStUvWxYz", "type": "text" },
+        { "name": "secretKey", "value": "sk_live_51AbCdEfGhIjKlMnOpQrStUvWxYz", "type": "password" },
+        { "name": "webhookSecret", "value": "whsec_1234567890abcdefghijklmnopqrst", "type": "password" }
+      ]
+    },
+    { 
+      "id": 3, 
+      "name": "Twilio", 
+      "status": "Not Connected", 
+      "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Twilio_logo.svg/1920px-Twilio_logo.svg.png",
+      "configFields": [
+        { "name": "accountSid", "value": "", "type": "text" },
+        { "name": "authToken", "value": "", "type": "password" },
+        { "name": "phoneNumber", "value": "", "type": "text" }
+      ]
+    }
+  ],
+  "whitelistedIPs": ["192.168.1.1", "10.0.0.1"]
+} 

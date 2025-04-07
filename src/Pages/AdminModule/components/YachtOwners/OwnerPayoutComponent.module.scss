@@ -1,0 +1,366 @@
+/* 🎨 Color Palette */
+$primary-color: #007bff;
+$success-color: #28a745;
+$warning-color: #ffc107;
+$error-color: #dc3545;
+$hold-color: #fd7e14;
+$background-light: #f8f9fa;
+$text-color: #333;
+$border-color: #ddd;
+$shadow: rgba(0, 0, 0, 0.1);
+
+/* 📌 Mixin for Smooth Transitions */
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease-in-out;
+}
+
+/* 📌 Main Container */
+.yachtOwnersContainer {
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+/* 🔹 Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    color: $text-color;
+    margin: 0;
+  }
+}
+
+/* 🏦 Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+
+  thead {
+    background: $primary-color;
+    color: white;
+
+    th {
+      padding: 10px;
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border-color;
+      @include transition();
+
+      &:hover {
+        background: $background-light;
+      }
+
+      td {
+        padding: 6px;
+        text-align: left;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+/* 👤 Profile Cell */
+.profileCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 🔹 Status Colors */
+.statusCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  &.active {
+    background: rgba($success-color, 0.1);
+    color: $success-color;
+  }
+
+  &.pending {
+    background: rgba($warning-color, 0.1);
+    color: $warning-color;
+  }
+
+  &.suspended {
+    background: rgba($error-color, 0.1);
+    color: $error-color;
+  }
+}
+
+.statusIcon {
+  width: 14px;
+  height: 14px;
+}
+
+/* 🛠️ Actions */
+.actions {
+  display: flex;
+  gap: 5px;
+}
+
+/* Icon Buttons */
+.editButton, .saveButton {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.saveButton {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+/* 📌 Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+
+  .pageNumbers {
+    display: flex;
+    gap: 4px;
+    
+    button {
+      min-width: 32px;
+      padding: 6px 8px;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      background: white;
+      
+      &:hover:not(:disabled) {
+        background: $background-light;
+      }
+      
+      &.active {
+        background: $primary-color;
+        color: white;
+        border-color: $primary-color;
+      }
+      
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+/* 🛠 Responsive Fixes */
+@media (max-width: 1024px) {
+  .yachtOwnersContainer {
+    padding: 1.2rem;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Editable Inputs */
+input, select, .inputt {
+  width: 100%;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Cell styles */
+.contactCell, .emailCell, .nameCell {
+  font-size: 0.85rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.contactCell {
+  white-space: nowrap;
+}
+
+/* Filter and Export Section Styles */
+.filterContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.filterButton {
+  background: #007bff;
+  color: white;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 38px;
+  @include transition;
+  
+  &:hover {
+    background: #0069d9;
+    transform: translateY(-1px);
+  }
+}
+
+.filterDropdown {
+  display: none;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  width: 250px;
+  top: 40px;
+  left: 0;
+  z-index: 10;
+}
+
+.filterContainer.active .filterDropdown {
+  display: block;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  align-items: start;
+  padding: 8px 0;
+  border-bottom: 1px solid $border-color;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.filterGroup select,
+.filterGroup input[type="range"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.filterGroup label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Remove unused exportButtons styles */
+.exportButtons {
+  display: none; /* Hide this section since we moved the buttons */
+}
+
+/* Entries Selector */
+.entriesSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  
+  select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid $border-color;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+}
+
+.searchBox {
+  position: relative;
+  margin-right: 5px;
+
+  input {
+    padding: 10px 35px;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    font-size: 0.9rem;
+    @include transition;
+    width: 220px;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+      outline: none;
+    }
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+  }
+}

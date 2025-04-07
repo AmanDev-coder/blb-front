@@ -1,0 +1,158 @@
+/* Import theme variables */
+@import './theme.scss';
+
+/* Reset & normalize styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-primary) !important;
+}
+
+/* Additional global styles */
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-family-primary) !important;
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Force font styles application */
+:root {
+  /* Force Poppins as the default font for all elements */
+  font-family: var(--font-family-primary) !important;
+}
+
+/* Apply Work Sans to specific elements if needed */
+.secondary-font {
+  font-family: var(--font-family-secondary) !important;
+}
+
+/* Ensure Poppins is applied to all text inputs */
+input, 
+select, 
+textarea, 
+button {
+  font-family: var(--font-family-primary) !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Force smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: var(--font-family-primary) !important;
+}
+
+/* Container styles */
+.container {
+  width: 100%;
+  padding-right: var(--spacing-4);
+  padding-left: var(--spacing-4);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Button styles that follow theme variables */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2) var(--spacing-4);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  line-height: 1.5;
+  gap: var(--spacing-2); /* For icons */
+  font-family: var(--font-family-primary) !important;
+  
+  &:focus {
+    outline: 2px solid var(--color-primary-400);
+    outline-offset: 2px;
+  }
+  
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background-color: var(--color-primary-600);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-700);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--color-primary-800);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary-600);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-secondary-700);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--color-secondary-800);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-primary-600);
+  color: var(--color-primary-600);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-50);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--color-primary-100);
+  }
+}

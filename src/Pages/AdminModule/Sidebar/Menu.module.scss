@@ -1,0 +1,183 @@
+@mixin glass-effect {
+    // background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+  
+    .menuItem {
+      margin-bottom: 0.5rem;
+      position: relative;
+  
+      .menuHeader {
+        display: flex;
+        align-items: center;
+        padding: 0.85rem 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: transparent;
+        position: relative;
+        overflow: hidden;
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin: 0 0.5rem;
+  
+        .icon {
+            font-size: 1.1rem;
+            margin-right: 1.2rem; // Increased gap for main menu items
+            width: 24px;
+            text-align: center;
+            color: #50abc7;
+            transition: all 0.3s ease;
+          }
+  
+        span {
+          flex-grow: 1;
+          position: relative;
+          z-index: 1;
+          color: #ffffff;
+        }
+  
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background: linear-gradient(90deg, rgba(80, 171, 199, 0.1), transparent);
+          transition: width 0.3s ease;
+        }
+  
+        &:hover {
+          background: rgba(255, 255, 255, 0.03);
+          
+          &::before {
+            width: 100%;
+          }
+          
+          .icon {
+            transform: translateX(3px);
+          }
+        }
+  
+        &.activeLink {
+          background: rgba(80, 171, 199, 0.15);
+          
+          &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 3px;
+            background: #50abc7;
+            border-radius: 2px;
+          }
+        }
+  
+        .arrowIcon {
+          margin-left: auto;
+          font-size: 0.8rem;
+          color: rgb(255, 255, 255);
+          transition: transform 0.3s ease;
+        }
+      }
+  
+      .subMenu {
+        display: none;
+        margin-left: 2.5rem;
+        padding: 0.25rem 0;
+        position: relative;
+  
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0.5rem;
+          top: 0;
+          height: 100%;
+          width: 2px;
+          background: linear-gradient(to bottom, 
+            rgba(80, 171, 199, 0.4) 0%, 
+            rgba(80, 171, 199, 0.2) 50%, 
+            transparent 100%);
+        }
+  
+        &.show {
+          display: flex;
+          flex-direction: column;
+          animation: slideDown 0.3s ease-out;
+        }
+  
+        .subMenuItem {
+          padding: 0.6rem 1.5rem;
+          margin: 0.25rem 0;
+          border-radius: 6px;
+          transition: all 0.2s ease;
+          position: relative;
+  
+          a {
+            display: flex;
+            align-items: center;
+            gap: 1rem; // Added gap between icon and text
+  
+            .icon {
+              font-size: 0.95rem;
+              margin-right: 0;
+              color: rgba(80, 171, 199, 0.9);
+              width: 24px;
+              text-align: center;
+              transition: color 0.3s ease;
+            }
+          }
+  
+          &:hover {
+            background: rgba(255, 255, 255, 0.03);
+            a .icon {
+                color: #50abc7;
+              }
+            
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0.5rem;
+              top: 0;
+              height: 100%;
+              width: 2px;
+              background: #50abc7;
+            }
+          }
+  
+          &.activeLink {
+            background: rgba(80, 171, 199, 0.1);
+            
+            a {
+              color: #50abc7;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

@@ -92,25 +92,25 @@ export const AllRoutes = ({ onSearch }) => {
         <Route
           path="/ownersignup"
           element={
-            // <PrivateRoutes>
+            <PrivateRoutes>
               <OwnerSignup />
-            // </PrivateRoutes>
+            </PrivateRoutes>
           }
         />
         <Route
           path="/admindashboard"
           element={
-           // <PrivateRoutes>
+           <PrivateRoutes>
               <ThemeLayout sidebar={true} header={true}>
                 <Dashboard />
               </ThemeLayout>
-           // </PrivateRoutes>
+           </PrivateRoutes>
           }
         />
         <Route path="/adminn/*" element={  
-          //<PrivateRoutes>
+          <PrivateRoutes>
             <AdminRoutes />
-            //</PrivateRoutes>
+          </PrivateRoutes>
           
           } />
 

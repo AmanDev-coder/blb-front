@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { ToastContainer } from "react-toastify";
 import { AllRoutes } from "./AllRoutes/AllRoutes";
 import "react-toastify/dist/ReactToastify.css";
-import { ThemeProvider } from './styles/ThemeProvider';
+import { ThemeProvider } from './Styles/ThemeProvider';
 
 // Import FontDisplay in development mode only
 const FontDisplay = process.env.NODE_ENV === 'development' 
